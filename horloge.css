@@ -1,0 +1,73 @@
+*{
+--size: 50vh;
+box-sizing: border-box;
+}
+#cadran{
+    position: absolute;
+    margin: 25px 0 0 0;
+    left: calc(50% - var(--size) / 2);
+    top: calc(50% - var(--size) / 2);
+    height: var(--size);
+    width: var(--size);
+    background-color: rgba(255, 228, 72, 0.356);
+    box-shadow: inset 0 0 2vh #000;
+    border-radius: 50%;
+}
+#heures{
+    position: absolute;
+    transform-origin: 50% 0;
+    top: 50%;
+    left: calc(50% - var(--size) / 80);
+    height: calc(var(--size) / 4);
+    width: calc(var(--size) / 40);
+    border-radius: var(--size);
+    box-shadow: 0 0 1vh whitesmoke;
+    background-color: whitesmoke;
+    animation: whiteBlink 10s infinite linear;
+}
+#minutes{
+    position: absolute;
+    transform-origin: 50% 0;
+    left: calc(50% - var(--size) / 120);
+    height: calc(var(--size) / 3);
+    width: calc(var(--size) / 60);
+    border-radius: var(--size);
+    box-shadow: 0 0 1vh whitesmoke;
+    background-color: whitesmoke;
+    animation: whiteBlink 10s infinite linear;
+}
+#secondes{
+    position: absolute;
+    transform-origin: 50% 0;
+    left: calc(50% - var(--size) / 200);
+    height: calc(var(--size) / 2.2);
+    width: calc(var(--size) / 100);
+    border-radius: var(--size);
+    box-shadow: 0 0 1vh red;
+    background-color: red;
+    animation: redBlink 10s infinite linear;
+}
+#center{
+    position: absolute;
+    left: calc(50% - var(--size) / 80);
+    top: calc(50% - var(--size) / 80);
+    height: calc(var(--size) / 40);
+    width: calc(var(--size) / 40);
+    box-shadow: 0 0 1vh #000;
+    border-radius: 50%;
+    background-color: black;
+}
+@keyframes whiteBlink{
+    0%{background-color: whitesmoke; box-shadow: whitesmoke;}
+    66%{background-color: whitesmoke; box-shadow: whitesmoke;}
+    67%{background-color: black; box-shadow: black;}
+    68%{background-color: whitesmoke; box-shadow: whitesmoke;}
+    100%{background-color: whitesmoke; box-shadow: whitesmoke;}
+}
+@keyframes redBlink{
+    0%{background-color: red; box-shadow: red;}
+    33%{background-color: red; box-shadow: red;}
+    34%{background-color: black; box-shadow: black;}
+    35%{background-color: red; box-shadow: red;}
+    100%{background-color: red; box-shadow: red;}
+}

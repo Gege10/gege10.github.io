@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="creation.css">
+    <title>Création</title>
+</head>
+<body>
+	<div class="petitmenu">
+		<!-- Utilisation d'une checkbox -->
+		<input type="checkbox" id="hamburger">
+		<!-- Label de la checkbox -->
+		<label id="hamburger-logo" for="hamburger">☰</label>
+		<!-- Le reste du menu -->
+		<nav>
+			<a href="index.html">Accueil</a>
+			<a href="presentation.html">Présentation</a>
+			<a href="formation.html">Formation</a>
+			<a class="active" href="creation.html">Création</a>
+			<a href="horloge.html">Horloge</a>
+		</nav>
+	</div>
+	<nav>
+		<ul>
+			<li><a href="index.html">Accueil</a></li>
+			<li><a href="presentation.html">Présentation</a></li>
+			<li><a href="formation.html">Formation</a></li>
+			<li><a class="active" href="creation.html">Création</a></li>
+			<li><a href="horloge.html">Horloge</a></li>
+		</ul>
+	</nav>
+	<h1>Création</h1>
+    <div class="creation">
+        <h2>Logo SVG</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" basePofile="full" version="1.1" width="220" height="250">
+            <polygon points="110, 250 70, 75 150, 75"/>
+            <polygon points="110, 250 10, 110 70, 75"/>
+            <polygon points="110, 250 210, 110 150, 75"/>
+            <polygon points="110, 250 10, 110 0, 150"/>
+            <polygon points="110, 250 210, 110 220, 150"/>
+            <polygon points="10, 110 70, 75 40, 0"/>
+            <polygon points="210, 110 150, 75 180, 0"/>
+        </svg>
+        <p>Ceci est une image créer en svg sans utiliser de logiciel tel que Inkscape. Elle a été créer en se référent au logo GitLab et en créant des polygon</p>
+    </div>
+    <div class="creation">
+        <h2>Cube 3D</h2>
+        <div class="cubeContainer">
+            <div class="cube">
+              <div class="cubeFaces">BOTTOM</div>
+              <div class="cubeFaces">FRONT</div>
+              <div class="cubeFaces">TOP</div>
+              <div class="cubeFaces">RIGHT</div>
+              <div class="cubeFaces">LEFT</div>
+              <div class="cubeFaces">BACK</div>
+            </div>
+        </div>
+        <p>Ceci est un cube créer complétement en CSS. Il vous permet d'admirer les 6 faces d'un cube en mouvement de rotation perpétuel</p>
+    </div>
+    <div class="creation">
+        <h2>Tétraèdre</h2>
+        <div class="triangleContainer">
+            <div class="triangle">
+              <div class="triangleFaces" id="bottom"></div>
+              <div class="triangleFaces" id="top1"></div>
+              <div class="triangleFaces" id="top2"></div>
+              <div class="triangleFaces" id="top3"></div>
+            </div>
+          </div>
+        <p>Ceci est une tentative de création d'un tétraèdre, une forme géométrique 3D où tous les côtés sont de la même longueur. Il est lui aussi en mouvement de rotation perpétuel</p>
+    </div>
+	<footer>
+		<p>Auteur : Gianni</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap');
+
+:root{
+	--main-color: rgb(32, 16, 77, 1);
+	--second-color: whiteSmoke;
+	--third-color: rgb(61, 45, 129);
+}
+*{
+	text-decoration: none;
+	list-style: none;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+body{
+	height: 100%;
+	min-height: 100vh;
+	background-color: black;
+	background-image: linear-gradient(210deg, rgba(76, 23, 161, 0.6), rgba(112, 9, 114, 0.5));
+	padding: 0;
+	margin: 0;
+	color: var(--second-color);
+	position: relative;
+	padding-bottom: 60px;
+}
+h1{
+	text-align: center;
+	color: var(--second-color);
+	margin: 20px;
+	margin-top: 75px;
+}
+h2{
+	text-align: center;
+	color: var(--second-color);
+}
+h3{
+	margin: 2em 1em;
+	color: var(--second-color);
+}
+p{
+	margin: 2em 1em;
+	text-align: justify;
+	color: var(--second-color);
+}
+ol li{
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+.container{
+	border-radius: 4px;
+	background-color: rgba(82,62,172,0.2);
+	padding: 1em;
+	margin: 2% 10% 2% 10%;
+	transition: background-color 1s;
+}
+.container:hover{
+	transition: background-color 0s;
+	background-color:rgba(236, 144, 39, 0.164);
+}
+footer{
+	background-color: var(--third-color);
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	padding: 0px;
+	margin: 0px;
+	height: 60px;
+}
+footer p{
+	margin: 0;
+	padding: 20px 3em 20px 3em;
+}
+
+/* Navigation */
+
+nav{
+	background-color: var(--third-color);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 50px;
+	width: 100%;
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	letter-spacing: 1px;
+	overflow: hidden;
+	z-index: 10;
+}
+nav ul{
+	float: left;
+	height: 50px;
+	padding-left: 0px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+nav ul li{
+	display: inline-block;
+	line-height: 0px;
+	margin-bottom: 100px;
+}
+nav ul li a{
+	padding: 17px 15px;
+	color: var(--second-color);
+	/*transition: background-color 0.5s;*/
+}
+nav ul li a:hover{
+	/*background-color: var(--main-color);*/
+	animation: epilepsie 1s linear infinite;
+	border-radius: 4px;
+}
+@keyframes epilepsie{
+	0%{background-color: var(--third-color);}
+	50%{background-color: var(--main-color);}
+	100%{background-color: var(--third-color);}
+}
+nav ul li a:active{
+	background: var(--third-color);
+	color: var(--second-color);
+}
+
+/* Menu hamburger */
+
+#hamburger {
+	/* Pour que la checkbox ne s'affiche pas */
+	display: none;
+}
+#hamburger-logo {
+	/* Pour que le curseur soit un pointeur */
+	cursor: pointer;
+	background: var(--third-color);
+	width: 200px;
+	display: block;
+	color: var(--main-color);
+	/* Pour que le menu hamburger s'affiche toujours */
+	text-align: right;
+	/* Pour que le menu hamburger soit "rangé" par défaut */
+	transform: translateX(-168px);
+	padding: 10px;
+}
+.petitmenu {
+	/* Pour que le menu reste en place quand on scroll */
+	position: fixed;
+	/* Pour que le menu ne soit pas sur le texte et que ce dernier puisse être sélectionné */
+	width: 0px;
+	box-sizing: border-box;
+	z-index: 10;
+}
+.petitmenu nav {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	height: auto;
+	/* Pour que les liens soient "rangés" par défaut */
+	transform: translateX(-200px);
+    top: auto;
+}
+#hamburger-logo,
+.petitmenu nav {
+	/* Pour qu'il y ait une animation */
+	transition: 0.7s;
+}
+/* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
+#hamburger:checked ~ #hamburger-logo,
+#hamburger:checked ~ nav {
+	/* Changement de la position pour afficher les menus */
+	transform: translate(0);
+}
+.petitmenu nav a {
+	color: var(--main-color);
+	padding: 10px;
+}
+.petitmenu nav a:hover {
+	background: var(--second-color);
+}
+nav a.active {
+	background: var(--main-color);
+	color: var(--second-color);
+}
+@media (max-width: 600px) {
+	nav {
+		display: none;
+	}
+	h1{
+		margin-top: 30px;
+	}
+}
+@media (min-width: 600px) {
+	.petitmenu{
+		display: none;
+	}
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="creation.css">
+    <title>Document</title>
+</head>
+<body onload="start()">
+    <div class="petitmenu">
+		<!-- Utilisation d'une checkbox -->
+		<input type="checkbox" id="hamburger">
+		<!-- Label de la checkbox -->
+		<label id="hamburger-logo" for="hamburger">☰</label>
+		<!-- Le reste du menu -->
+		<nav>
+			<a href="index.html">Accueil</a>
+			<a href="presentation.html">Présentation</a>
+			<a href="formation.html">Formation</a>
+			<a href="creation.html">Création</a>
+            <a class="active" href="horloge.html">Horloge</a>
+		</nav>
+	</div>
+	<nav>
+		<ul>
+			<li><a href="index.html">Accueil</a></li>
+			<li><a href="presentation.html">Présentation</a></li>
+			<li><a href="formation.html">Formation</a></li>
+			<li><a href="creation.html">Création</a></li>
+			<li><a class="active" href="horloge.html">Horloge</a></li>
+		</ul>
+	</nav>
+    <h1>Horloge</h1>
+    <div id="cadran">
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div class="marks"></div>
+        <div id="heures">
+            <div id="minutes">
+                <div id="secondes">
+                </div>
+            </div>
+        </div>
+        <div id="center"></div>
+    </div>
+    <footer>
+        <p>Auteur : Gianni</p>
+    </footer>
+    <script type="text/javascript" src="horloge.js"></script>
+</body>
+</html>

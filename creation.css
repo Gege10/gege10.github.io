@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap');
+
+:root{
+    --creation-background: rgb(82,62,172,0.2);
+}
+.cubeFaces{
+    font-family: 'Press Start 2P', cursive;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+.creation{
+    margin: 25px 10%;
+    padding: 25px 1em 1em;
+    background-color: var(--creation-background);
+}
+
+/* CSS du logo SVG */
+
+svg{
+    display: block;
+    margin: 10vh auto;
+}
+svg > :nth-child(1){
+    fill: rgb(58, 0, 92);
+}
+svg > :nth-child(2){
+    fill: rgb(135, 0, 139);
+}
+svg > :nth-child(3){
+    fill: rgb(135, 0, 139);
+}
+svg > :nth-child(4){
+    fill: rgb(177, 0, 212);
+}
+svg > :nth-child(5){
+    fill: rgb(177, 0, 212);
+}
+svg > :nth-child(6){
+    fill: rgb(83, 0, 131);
+}
+svg > :nth-child(7){
+    fill: rgb(83, 0, 131);
+}
+polygon{
+    fill: black;
+    transition: fill 1s;
+}
+polygon:hover{
+    fill: rgba(221, 91, 4, 0.568);
+    transition: fill 0s;
+}
+
+/* CSS du cube */
+
+.cubeContainer{
+    box-sizing: border-box;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    margin: 10vh auto;
+}
+.cube{
+    --taille-cube: 20vh;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    position: relative;
+    top: calc(50% - var(--taille-cube)/2 - var(--taille-cube)/100);
+    left: calc(50% - var(--taille-cube)/2 - var(--taille-cube)/100);
+    width: var(--taille-cube);
+    height: var(--taille-cube);
+}
+.cube{
+    animation: spinCube 10s infinite linear;
+}
+@keyframes spinCube{
+    0%{transform: rotateY(0deg) rotateX(0deg);}
+    100%{transform: rotateY(360deg) rotateX(360deg);}
+}
+.cubeFaces{
+    position: absolute;
+    width: var(--taille-cube);
+    height: var(--taille-cube);
+    line-height: var(--taille-cube);
+    border: calc(var(--taille-cube)/100) solid black;
+    text-align: center;
+    font-size: calc(var(--taille-cube)/8);
+}
+.cube > :nth-child(1){
+    background-color: rgba(255, 255, 133, 0.50);
+    transform: rotateX(-90deg) translateZ(calc(var(--taille-cube)/2));
+}
+.cube > :nth-child(1):hover{
+    background-color: var(--creation-background);
+}
+.cube > :nth-child(2){
+    background-color: rgba(134, 255, 133, 0.50);
+    transform: translateZ(calc(var(--taille-cube)/2));
+    background-size: cover;
+}
+.cube > :nth-child(2):hover{
+    background-color: var(--creation-background);
+}
+.cube > :nth-child(3){
+    background-color: rgba(133, 255, 251, 0.5);
+    transform: rotateX(90deg) translateZ(calc(var(--taille-cube)/2));
+}
+.cube > :nth-child(3):hover{
+    background-color: var(--creation-background);
+}
+.cube > :nth-child(4){
+    background-color: rgba(133, 142, 255, 0.5);
+    transform: rotateY(90deg) translateZ(calc(var(--taille-cube)/2));
+}
+.cube > :nth-child(4):hover{
+    background-color: var(--creation-background);
+}
+.cube > :nth-child(5){
+    background-color: rgba(218, 133, 255, 0.5);
+    transform: rotateY(-90deg) translateZ(calc(var(--taille-cube)/2));
+}
+.cube > :nth-child(5):hover{
+    background-color: var(--creation-background);
+}
+.cube > :nth-child(6){
+    background-color: rgba(255, 133, 133, 0.5);
+    transform: rotateY(180deg) translateZ(calc(var(--taille-cube)/2));
+}
+.cube > :nth-child(6):hover{
+    background-color: var(--creation-background);
+}
+
+/* CSS Tétrahédron */
+
+.triangleContainer{
+    box-sizing: border-box;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    margin: 75px auto;
+}
+.triangle{
+    --taille-triangle: 100px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    position: absolute;
+    top: calc(50% - var(--taille-triangle)/2 - var(--taille-triangle)/100);
+    left: calc(50% - var(--taille-triangle)/2 - var(--taille-triangle)/100);
+    height: 100px;
+    width: 100px;
+    animation: triangleAnim 10s infinite linear;
+}
+@keyframes triangleAnim{
+    0%{transform: rotateX(0deg) rotateY(0deg);}
+    100%{transform: rotateX(360deg) rotateY(360deg);}
+}
+.triangleFaces{
+    position: absolute;
+    border: 0 solid transparent;
+    transform-origin: 50% 57.77px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 86.60254037844386px solid rgba(155,155,155,0.5);
+}
+#bottom{
+    border-bottom-color: rgb(255, 255, 0);
+    transform: rotateX(90deg) translateZ(-20.4124px);
+}
+#top1{
+    border-bottom-color: rgb(255, 0, 0);
+    transform: rotateX(90deg) rotateX(-70.529deg) translateZ(20.4124px);
+
+}
+#top2{
+    border-bottom-color: rgb(255, 0, 255);
+    transform: rotateY(120deg) rotateX(90deg) rotateX(-70.529deg) translateZ(20.4124px);
+}
+#top3{
+    border-bottom-color: rgb(0, 255, 255);
+    transform: rotateY(240deg) rotateX(90deg) rotateX(-70.529deg) translateZ(20.4124px);
+}
+
+/* CSS Horloge */
+
+#cadran{
+    --size: 50vh;
+    position: absolute;
+    left: calc(50% - var(--size) / 2);
+    top: calc(45% - var(--size) / 2);
+    height: var(--size);
+    width: var(--size);
+    background-color: rgba(255, 228, 72, 0.356);
+    box-shadow: inset 0 0 2vh #000;
+    border-radius: 50%;
+}
+#heures{
+    position: absolute;
+    transform-origin: 50% 0;
+    top: 50%;
+    left: calc(50% - var(--size) / 80);
+    height: calc(var(--size) / 4);
+    width: calc(var(--size) / 40);
+    border-radius: var(--size);
+    box-shadow: 0 0 1vh whitesmoke;
+    background-color: whitesmoke;
+    /*animation: whiteBlink 10s infinite linear;*/
+}
+#minutes{
+    position: absolute;
+    transform-origin: 50% 0;
+    left: calc(50% - var(--size) / 120);
+    height: calc(var(--size) / 3);
+    width: calc(var(--size) / 60);
+    border-radius: var(--size);
+    box-shadow: 0 0 1vh whitesmoke;
+    background-color: whitesmoke;
+    /*animation: whiteBlink 10s infinite linear;
+    animation-delay: 3s;*/
+}
+#secondes{
+    position: absolute;
+    transform-origin: 50% 0;
+    left: calc(50% - var(--size) / 200);
+    height: calc(var(--size) / 2.2);
+    width: calc(var(--size) / 100);
+    border-radius: var(--size);
+    box-shadow: 0 0 1vh red;
+    background-color: red;
+    /*animation: redBlink 10s infinite linear;*/
+}
+#center{
+    position: absolute;
+    left: calc(50% - var(--size) / 80);
+    top: calc(50% - var(--size) / 80);
+    height: calc(var(--size) / 40);
+    width: calc(var(--size) / 40);
+    box-shadow: 0 0 1vh #000;
+    border-radius: 50%;
+    background-color: black;
+}
+.marks{
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+}
+/*#cadran > :nth-child(1){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(180deg);
+}
+#cadran > :nth-child(2){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(210deg);
+}
+#cadran > :nth-child(3){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(240deg);
+}
+#cadran > :nth-child(4){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(270deg);
+}
+#cadran > :nth-child(5){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(300deg);
+}
+#cadran > :nth-child(6){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(330deg);
+}
+#cadran > :nth-child(7){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(0deg);
+}
+#cadran > :nth-child(8){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(30deg);
+}
+#cadran > :nth-child(9){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(60deg);
+}
+#cadran > :nth-child(10){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(90deg);
+}
+#cadran > :nth-child(11){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(120deg);
+}
+#cadran > :nth-child(12){
+    position: absolute;
+    background-color: rgba(89, 0, 92, 0.5);
+    height: calc(var(--size) / 20);
+    width: calc(var(--size) / 60);
+    top: calc(50% + var(--size) / 2.4);
+    left: calc(50% - calc(var(--size) / 120));
+    border-radius: var(--size);
+    transform-origin: 50% calc(var(--size) / -2.4);
+    transform: rotate(150deg);
+}*/
+@keyframes whiteBlink{
+    0%{background-color: whitesmoke; box-shadow: whitesmoke;}
+    66%{background-color: whitesmoke; box-shadow: whitesmoke;}
+    67%{background-color: black; box-shadow: black;}
+    68%{background-color: whitesmoke; box-shadow: whitesmoke;}
+    100%{background-color: whitesmoke; box-shadow: whitesmoke;}
+}
+@keyframes redBlink{
+    0%{background-color: red; box-shadow: red;}
+    33%{background-color: red; box-shadow: red;}
+    34%{background-color: black; box-shadow: black;}
+    35%{background-color: red; box-shadow: red;}
+    100%{background-color: red; box-shadow: red;}
+}
