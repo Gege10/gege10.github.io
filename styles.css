@@ -3,7 +3,7 @@
 :root{
 	--main-color: rgb(32, 16, 77, 1);
 	--second-color: whiteSmoke;
-	--third-color: rgb(61, 45, 129);
+	--third-color: rgb(48, 2, 109);
 }
 *{
 	text-decoration: none;
@@ -102,17 +102,12 @@ nav ul li{
 nav ul li a{
 	padding: 17px 15px;
 	color: var(--second-color);
-	/*transition: background-color 0.5s;*/
+	transition: background-color 0.5s;
+	box-shadow: inset 0 0 20px var(--third-color);
 }
 nav ul li a:hover{
-	/*background-color: var(--main-color);*/
-	animation: epilepsie 1s linear infinite;
+	background-color: var(--main-color);
 	border-radius: 4px;
-}
-@keyframes epilepsie{
-	0%{background-color: var(--third-color);}
-	50%{background-color: var(--main-color);}
-	100%{background-color: var(--third-color);}
 }
 nav ul li a:active{
 	background: var(--third-color);
