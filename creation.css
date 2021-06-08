@@ -15,6 +15,10 @@
 
 /* CSS du logo SVG */
 
+.logoContainer{
+    width: 20%;
+    margin: auto;
+}
 svg{
     display: block;
     margin: 10vh auto;
@@ -184,8 +188,17 @@ polygon:hover{
 
 /* CSS Horloge */
 
+@media (max-width: 600px) {
+	#cadran{
+        --size: 50vw;
+    }
+}
+@media (min-width: 600px) {
+	#cadran{
+		--size: 50vh;
+	}
+}
 #cadran{
-    --size: 50vh;
     position: absolute;
     left: calc(50% - var(--size) / 2);
     top: calc(45% - var(--size) / 2);
@@ -205,7 +218,6 @@ polygon:hover{
     border-radius: var(--size);
     box-shadow: 0 0 1vh whitesmoke;
     background-color: whitesmoke;
-    /*animation: whiteBlink 10s infinite linear;*/
 }
 #minutes{
     position: absolute;
@@ -216,8 +228,6 @@ polygon:hover{
     border-radius: var(--size);
     box-shadow: 0 0 1vh whitesmoke;
     background-color: whitesmoke;
-    /*animation: whiteBlink 10s infinite linear;
-    animation-delay: 3s;*/
 }
 #secondes{
     position: absolute;
@@ -228,7 +238,6 @@ polygon:hover{
     border-radius: var(--size);
     box-shadow: 0 0 1vh red;
     background-color: red;
-    /*animation: redBlink 10s infinite linear;*/
 }
 #center{
     position: absolute;
@@ -249,150 +258,4 @@ polygon:hover{
     left: calc(50% - calc(var(--size) / 120));
     border-radius: var(--size);
     transform-origin: 50% calc(var(--size) / -2.4);
-}
-/*#cadran > :nth-child(1){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(180deg);
-}
-#cadran > :nth-child(2){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(210deg);
-}
-#cadran > :nth-child(3){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(240deg);
-}
-#cadran > :nth-child(4){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(270deg);
-}
-#cadran > :nth-child(5){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(300deg);
-}
-#cadran > :nth-child(6){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(330deg);
-}
-#cadran > :nth-child(7){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(0deg);
-}
-#cadran > :nth-child(8){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(30deg);
-}
-#cadran > :nth-child(9){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(60deg);
-}
-#cadran > :nth-child(10){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(90deg);
-}
-#cadran > :nth-child(11){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(120deg);
-}
-#cadran > :nth-child(12){
-    position: absolute;
-    background-color: rgba(89, 0, 92, 0.5);
-    height: calc(var(--size) / 20);
-    width: calc(var(--size) / 60);
-    top: calc(50% + var(--size) / 2.4);
-    left: calc(50% - calc(var(--size) / 120));
-    border-radius: var(--size);
-    transform-origin: 50% calc(var(--size) / -2.4);
-    transform: rotate(150deg);
-}*/
-@keyframes whiteBlink{
-    0%{background-color: whitesmoke; box-shadow: whitesmoke;}
-    66%{background-color: whitesmoke; box-shadow: whitesmoke;}
-    67%{background-color: black; box-shadow: black;}
-    68%{background-color: whitesmoke; box-shadow: whitesmoke;}
-    100%{background-color: whitesmoke; box-shadow: whitesmoke;}
-}
-@keyframes redBlink{
-    0%{background-color: red; box-shadow: red;}
-    33%{background-color: red; box-shadow: red;}
-    34%{background-color: black; box-shadow: black;}
-    35%{background-color: red; box-shadow: red;}
-    100%{background-color: red; box-shadow: red;}
 }
